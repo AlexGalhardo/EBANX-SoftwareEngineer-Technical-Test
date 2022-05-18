@@ -34,6 +34,13 @@
 - refactor: refactor code logic in this commit
 - style: improve code quality in this commit
 - test: improve testing/tests in this commit
+
+## Software Architecture/Principles
+- I used some Clean Architecture principles (I don't master the principles of clean architecture yet, I started studying these last few months)
+- My main reference about this topic is the book "Arquitetura Lima na Prática" from Otavio Lemos: https://www.otaviolemos.com.br/
+- Some boilerplate of this project I took from previous projects I've in my github for reference
+- The Bussiness Logic is inside "UseCase.ts" files
+- The automated/unit tests weren't necessary I know, I did more for learning and putting TDD into practice
 ## Instructions / To Dos
 
 - <strong>Remember to save data in memory Alex!</strong>
@@ -91,5 +98,7 @@
 
 ### Send Source Code
 - [ ] Send to: https://app3.greenhouse.io/tests/0398188f1ef1c31ea16d6be780318d61?utm_medium=email&utm_source=TakeHomeTest
+
+## How to run this project locally
 
 ## Some Prints
