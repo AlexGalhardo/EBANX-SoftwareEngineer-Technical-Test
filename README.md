@@ -13,7 +13,7 @@
 - Node version: v16.14.2
 - NPM version: 8.5.0
 - Jest for automatic/unit tests
-- And of course, some googling, stackoverflow, documentation, and so on, you know
+- And of course, some googling, google translate, stackoverflow, documentation, and so on, you know...
 
 ## Keep in Mind
 - There is no hidden agenda, if you code passes the tests, and you are happy about it:  you are done;
@@ -24,7 +24,7 @@
 - AGAIN, Keep your code malleable, we may ask for modifications;
 - Use version control, we would love to see your step-by-step process;
 - Take your time, don’t rush it;
-## GIT COMMITS SEMANTIC (Remember Alex!)
+## Git Commits Semantic (Remember Alex!)
 - Use atomic commits
 - chore: add new chore in this commit
 - docs: add new documentation in this commit
