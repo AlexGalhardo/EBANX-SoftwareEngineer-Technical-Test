@@ -13,7 +13,7 @@
 - Node version: v16.14.2
 - NPM version: 8.5.0
 - Jest for automatic/unit tests
-- And of course, some googling, google translate, stackoverflow, documentation, and so on, you know...
+- And of course, some googling, google translate, stackoverflow, documentation, spotify, and so on, you know...
 
 ## Keep in Mind
 - Durability *IS NOT* a requirement, that is, you don’t need to use a database or persistence mechanism.
@@ -36,7 +36,7 @@
 - test: improve testing/tests in this commit
 ## Instructions / To Dos
 
-- Remember to save data in memory Alex!
+- <strong>Remember to save data in memory Alex!</strong>
 
 ### Reset state before starting tests
 - POST /reset
