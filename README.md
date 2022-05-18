@@ -5,7 +5,8 @@
 ## Tools I Used
 - Typescript
 - LinuxMint 20.3
-- Bash Terminal
+- Bash Terminal 
+- Git (of course)
 - VSCode
 - [Insomnia](https://insomnia.rest/download) to Test HTTP Requests 
 - [Heroku](https://www.heroku.com/) to Deploy API
@@ -23,8 +24,17 @@
 - AGAIN, Keep your code malleable, we may ask for modifications;
 - Use version control, we would love to see your step-by-step process;
 - Take your time, don’t rush it;
-
+## GIT COMMITS SEMANTIC (Remember Alex!)
+- Use atomic commits
+- chore: add new chore in this commit
+- docs: add new documentation in this commit
+- feat: add new feature/update in this commit
+- fix: fix some bug or error in this commit
+- refactor: refactor code logic in this commit
+- style: improve code quality in this commit
+- test: improve testing/tests in this commit
 ## Instructions / To Dos
+
 ### Reset state before starting tests
 - POST /reset
 - 200 OK
