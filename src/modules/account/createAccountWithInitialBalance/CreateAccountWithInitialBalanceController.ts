@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { CreateAccountWithInitialBalanceUseCase } from "./createAccountWithInitialBalanceUseCase";
 
-export class createAccountWithInitialBalanceController {
+export class CreateAccountWithInitialBalanceController {
     async handle(req: Request, res: Response) {
         const { username, password } = req.body
 

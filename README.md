@@ -26,7 +26,7 @@
 - Use version control, we would love to see your step-by-step process;
 - Take your time, don’t rush it;
 ## Git Commits Semantic (Remember Alex!)
-- Use atomic commits
+- Use atomic commits (I'm really bad at this, I confess)
 - chore: add new chore in this commit
 - docs: add new documentation in this commit
 - feat: add new feature/update in this commit
