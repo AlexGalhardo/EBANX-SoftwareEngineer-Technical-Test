@@ -4,7 +4,9 @@
   "description": "technical test for the ebanx software engineer selection process",
   "main": "src/server.ts",
   "scripts": {
-    "start": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/server.ts"
+    "start": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/server.ts",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [
     "typescript",
@@ -19,6 +21,8 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
+    "@types/jest": "^27.5.1",
+    "@types/supertest": "^2.0.12",
     "jest": "^28.1.0",
     "supertest": "^6.2.3",
     "ts-node-dev": "^1.1.8",

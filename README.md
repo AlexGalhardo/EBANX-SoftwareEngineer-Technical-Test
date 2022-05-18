@@ -16,6 +16,7 @@
 - And of course, some googling, google translate, stackoverflow, documentation, and so on, you know...
 
 ## Keep in Mind
+- Durability *IS NOT* a requirement, that is, you don’t need to use a database or persistence mechanism.
 - There is no hidden agenda, if you code passes the tests, and you are happy about it:  you are done;
 - Pay attention to the package/directory structure, naming and encapsulation;
 - Separate your business logic from the HTTP transport layer;
@@ -34,6 +35,8 @@
 - style: improve code quality in this commit
 - test: improve testing/tests in this commit
 ## Instructions / To Dos
+
+- Remember to save data in memory Alex!
 
 ### Reset state before starting tests
 - POST /reset
