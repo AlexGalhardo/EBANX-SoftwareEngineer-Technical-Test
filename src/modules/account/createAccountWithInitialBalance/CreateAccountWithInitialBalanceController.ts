@@ -1,15 +1,15 @@
 import { Request, Response } from "express";
-import { CreateAccountWithInitialBalanceUseCase } from "./createAccountWithInitialBalanceUseCase";
+import { CreateAccountWithInitialBalanceUseCase } from "./CreateAccountWithInitialBalanceUseCase";
 
 export class CreateAccountWithInitialBalanceController {
     async handle(req: Request, res: Response) {
-        const { username, password } = req.body
+        const { type, destination, amount } = req.body
 
         const createAccountWithInitialBalanceUseCase = new CreateAccountWithInitialBalanceUseCase();
-        const response = await createAccountWithInitialBalanceUseCase.execute({
-            username, password
+        const jsonResponse = await createAccountWithInitialBalanceUseCase.execute({
+            type, destination, amount
         })
 
-        return res.json(response)
+        return res.status(201).json(jsonResponse)
     }
 }

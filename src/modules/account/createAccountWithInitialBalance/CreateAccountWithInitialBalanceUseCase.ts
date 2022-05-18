@@ -1,10 +1,11 @@
-interface IAuthenticateClient {
-    username: string;
-    password: string;
+import inMemoryJSONDatabase from '../../../repositories/inMemoryJSON';
+interface ICreateAccountWithInitialBalance {
+    type: string;
+    destination: string;
+    amount: number;
 }
-
 export class CreateAccountWithInitialBalanceUseCase {
-    async execute({ username, password }: IAuthenticateClient) {
+    async execute({ type, destination, amount }: ICreateAccountWithInitialBalance) {
 
     }
 }
