@@ -1,12 +1,14 @@
 import { inMemoryDatabase } from '../../../repositories/inMemoryDatabase';
-interface ICreateAccountWithInitialBalance {
+
+interface IPostEventTypeTransfer {
     destination: string;
     amount: number;
 }
-export class CreateAccountWithInitialBalanceUseCase {
+
+export class PostEventTypeTransferUseCase {
     // private readonly accountRepository: AccountRepository
 
-    async execute({ destination, amount }: ICreateAccountWithInitialBalance) {
+    async execute({ destination, amount }: IPostEventTypeTransfer) {
 
         const newAccountWithInitialBalanceObject = {
             id: destination,
@@ -17,6 +19,6 @@ export class CreateAccountWithInitialBalanceUseCase {
 
         inMemoryDatabase.destination = newAccountWithInitialBalanceObject
 
-        return inMemoryDatabase
+        return { httpStatusCodeResponse: 201, message: inMemoryDatabase }
     }
 }

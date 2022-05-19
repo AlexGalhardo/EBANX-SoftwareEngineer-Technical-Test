@@ -1,13 +1,13 @@
 import { inMemoryDatabase } from '../../../repositories/inMemoryDatabase';
 
-interface IGetBalanceForNonExistingAccountUseCase {
+interface IGetBalanceUseCase {
     account_id: any
 }
 
-export class GetBalanceForNonExistingAccountUseCase {
+export class GetBalanceUseCase {
     // private readonly accountRepository: AccountRepository
 
-    async execute({ account_id }: IGetBalanceForNonExistingAccountUseCase) {
+    async execute({ account_id }: IGetBalanceUseCase) {
 
         // if (inMemoryDatabase.destination?.id !== account_id) return 0
 
