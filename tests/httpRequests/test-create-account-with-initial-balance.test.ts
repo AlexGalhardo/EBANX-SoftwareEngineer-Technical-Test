@@ -9,13 +9,22 @@ describe("testing create account with initial balance", () => {
         const response = await request(app)
             .post("/event")
             .send({
-                'id': 1,
-                'name': 'Mike'
+                "type": "deposit",
+                "destination": "100",
+                "amount": 10
             })
             .set('Content-Type', 'application/json')
             .set('Accept', 'application/json')
 
-        console.log(response)
+        const responseObjectToBe = {
+            destination: {
+                type: "deposit",
+                destination: "100",
+                amount: 10
+            }
+        }
+
         expect(response.statusCode).toBe(201);
+        expect(JSON.stringify(response.body)).toBe(JSON.stringify(responseObjectToBe))
     });
 });
