@@ -1,7 +1,6 @@
 ## Software Engineer Technical Test EBANX
 
 #### Author: Alex Galhardo Vieira <aleexgvieira@gmail.com> / https://github.com/AlexGalhardo
-
 ## Tools I Used
 - Typescript
 - LinuxMint 20.3
@@ -63,12 +62,12 @@
 ### Deposit into existing account
 - POST /event {"type":"deposit", "destination":"100", "amount":10}
 - 201 {"destination": {"id":"100", "balance":20}}
-- [ ] Done
+- [x] Done
 
 ### Get balance for existing account
 - GET /balance?account_id=100
 - 200 20
-- [ ] Done
+- [x] Done
 
 ### Withdraw from non-existing account
 - POST /event {"type":"withdraw", "origin":"200", "amount":10}
@@ -102,3 +101,6 @@
 ## How to run this project locally
 
 ## Some Prints
+
+## LICENSE
+Copyright (c) 18-05-2022 ~ present, Alex Galhardo

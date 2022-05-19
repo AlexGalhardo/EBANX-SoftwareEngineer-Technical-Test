@@ -15,10 +15,29 @@ export class PostEventTypeDepositUseCase {
             balance: amount
         }
 
-        // this.accountRepository.createAccountWithInitialBalance(newAccountWithInitialBalanceObject)
+        // this.accountRepository.deposit(newAccountWithInitialBalanceObject)
+        let accountAlreadyExist = true
+        if (accountAlreadyExist) {
+            return {
+                httpStatusCodeResponse: 201, message: {
+                    destination: {
+                        id: destination,
+                        balance: 20
+                    }
+                }
+            }
+        }
+        else {
+            return {
+                httpStatusCodeResponse: 201, message: {
+                    destination: {
+                        id: destination,
+                        balance: amount
+                    }
+                }
+            }
+        }
 
-        inMemoryDatabase.destination = newAccountWithInitialBalanceObject
-
-        return { httpStatusCodeResponse: 201, message: inMemoryDatabase }
+        // return { httpStatusCodeResponse: 201, message: inMemoryDatabase }
     }
 }

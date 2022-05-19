@@ -5,9 +5,9 @@ class GetBalanceController {
     async handle(req: Request, res: Response) {
         const { account_id } = req.query
 
-        const getBalanceForNonExistingAccountResponse = await new GetBalanceUseCase().execute({ account_id })
+        const getBalanceResponse = await new GetBalanceUseCase().execute({ account_id })
 
-        return res.status(404).json(getBalanceForNonExistingAccountResponse)
+        return res.status(getBalanceResponse.httpStatusCodeResponse).json(getBalanceResponse.message)
     }
 }
 

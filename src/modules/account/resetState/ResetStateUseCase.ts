@@ -7,7 +7,7 @@ export class ResetStateUseCase {
 
         // this.accountRepository.resetStateUseCase()
 
-        inMemoryDatabase.destination = {}
+        inMemoryDatabase.length = 0
 
         return 'OK'
     }

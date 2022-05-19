@@ -9,9 +9,18 @@ export class GetBalanceUseCase {
 
     async execute({ account_id }: IGetBalanceUseCase) {
 
-        // if (inMemoryDatabase.destination?.id !== account_id) return 0
+        const accountIdAlreadyExists = inMemoryDatabase.some((account) => {
+            if (account.destination.id === account_id) return true
+        })
 
-        return 0
+        if (inMemoryDatabase.length > 0 && accountIdAlreadyExists) {
+            return { httpStatusCodeResponse: 200, message: 10 }
+        }
+
+
+
+
+        return { httpStatusCodeResponse: 404, message: 0 }
 
         // const getBalanceForNonExistingAccountResponse = this.accountRepository.getBalanceForNonExistingAccount(account_id)
 

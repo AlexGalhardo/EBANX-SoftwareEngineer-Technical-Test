@@ -11,13 +11,15 @@ export class PostEventTypeWithdrawUseCase {
     async execute({ destination, amount }: IPostEventTypeWithdraw) {
 
         const newAccountWithInitialBalanceObject = {
-            id: destination,
-            balance: amount
+            destination: {
+                id: destination,
+                balance: amount
+            }
         }
 
         // this.accountRepository.createAccountWithInitialBalance(newAccountWithInitialBalanceObject)
 
-        inMemoryDatabase.destination = newAccountWithInitialBalanceObject
+        inMemoryDatabase.push(newAccountWithInitialBalanceObject)
 
         return { httpStatusCodeResponse: 201, message: inMemoryDatabase }
     }
