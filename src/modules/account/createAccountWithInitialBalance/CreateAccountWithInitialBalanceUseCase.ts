@@ -1,4 +1,5 @@
-import inMemoryJSONDatabase from '../../../repositories/inMemoryJSON';
+// import inMemoryJSONDatabase from '../../../repositories/inMemoryJSON';
+import { inMemoryDatabase } from '../../../repositories/inMemoryDatabase';
 import fs from 'fs-extra'
 interface ICreateAccountWithInitialBalance {
     type: string;
@@ -10,22 +11,25 @@ export class CreateAccountWithInitialBalanceUseCase {
 
     async execute({ type, destination, amount }: ICreateAccountWithInitialBalance) {
 
-        const newAccountWithInitialBalanceObject: ICreateAccountWithInitialBalance = {
+        /* const newAccountWithInitialBalanceObject: ICreateAccountWithInitialBalance = {
+            type,
+            destination,
+            amount
+        }*/
+
+        // this.accountRepository.createAccountWithInitialBalance(newAccountWithInitialBalanceObject)
+        inMemoryDatabase.destination = {
             type,
             destination,
             amount
         }
 
-        // this.accountRepository.createAccountWithInitialBalance(newAccountWithInitialBalanceObject)
-
-        inMemoryJSONDatabase.destination = newAccountWithInitialBalanceObject
-
-        fs.writeFileSync('../../../repositories/inMemoryJSONDatabase.json', JSON.stringify(inMemoryJSONDatabase, null, 2), error => {
+        /* fs.writeFileSync('../../../repositories/inMemoryJSONDatabase.json', JSON.stringify(inMemoryDatabase, null, 2), error => {
             if (error) {
                 throw new Error(error);
             }
-        });
+        });*/
 
-        return inMemoryJSONDatabase
+        return inMemoryDatabase
     }
 }

@@ -6,7 +6,16 @@ import app from '../../src/app';
 
 describe("testing create account with initial balance", () => {
     it("it should return http status code 201 with the correct json response", async () => {
-        const response = await request(app).post("/event");
-        expect(response.statusCode).toBe(200);
+        const response = await request(app)
+            .post("/event")
+            .send({
+                'id': 1,
+                'name': 'Mike'
+            })
+            .set('Content-Type', 'application/json')
+            .set('Accept', 'application/json')
+
+        console.log(response.body)
+        expect(response.statusCode).toBe(201);
     });
 });

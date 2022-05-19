@@ -1,5 +1,5 @@
-import fs from 'fs-extra'
+import fs from 'fs'
 
-const inMemoryJSONDatabase = JSON.parse(fs.readFileSync('./inMemoryJSON.json', 'utf-8'))
+const inMemoryJSONDatabase = JSON.parse(fs.readFileSync('inMemoryJSONDatabase', 'utf-8'))
 
 export default inMemoryJSONDatabase
