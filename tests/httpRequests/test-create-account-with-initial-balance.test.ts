@@ -16,7 +16,7 @@ describe("testing create account with initial balance", () => {
             .set('Content-Type', 'application/json')
             .set('Accept', 'application/json')
 
-        const responseObjectToBe = {
+        const responseBodyToBe = {
             destination: {
                 type: "deposit",
                 destination: "100",
@@ -25,6 +25,6 @@ describe("testing create account with initial balance", () => {
         }
 
         expect(response.statusCode).toBe(201);
-        expect(JSON.stringify(response.body)).toBe(JSON.stringify(responseObjectToBe))
+        expect(JSON.stringify(response.body)).toBe(JSON.stringify(responseBodyToBe))
     });
 });
