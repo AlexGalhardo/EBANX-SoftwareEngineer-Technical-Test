@@ -15,7 +15,7 @@ describe("testing create account with initial balance", () => {
             .set('Content-Type', 'application/json')
             .set('Accept', 'application/json')
 
-        console.log(response.body)
+        console.log(response)
         expect(response.statusCode).toBe(201);
     });
 });

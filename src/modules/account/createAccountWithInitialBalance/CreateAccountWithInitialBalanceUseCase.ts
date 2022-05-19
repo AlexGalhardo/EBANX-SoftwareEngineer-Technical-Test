@@ -18,6 +18,7 @@ export class CreateAccountWithInitialBalanceUseCase {
         }*/
 
         // this.accountRepository.createAccountWithInitialBalance(newAccountWithInitialBalanceObject)
+
         inMemoryDatabase.destination = {
             type,
             destination,
@@ -28,7 +29,7 @@ export class CreateAccountWithInitialBalanceUseCase {
             if (error) {
                 throw new Error(error);
             }
-        });*/
+        }); */
 
         return inMemoryDatabase
     }

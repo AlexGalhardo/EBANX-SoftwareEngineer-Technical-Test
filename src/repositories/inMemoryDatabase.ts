@@ -5,5 +5,5 @@ interface ICreateAccountWithInitialBalance {
 }
 
 export const inMemoryDatabase = {
-    destination: null
+    destination: {}
 }
