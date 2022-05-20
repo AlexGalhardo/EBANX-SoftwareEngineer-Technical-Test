@@ -1,11 +1,11 @@
-import { inMemoryDatabase } from '../../../repositories/inMemoryDatabase';
+import InMemoryDatabaseAccountRepository from '../../../repositories/InMemoryDatabaseAccountRepository';
 
 interface IPostEventTypeDeposit {
     destination: string;
     amount: number;
 }
 
-export class PostEventTypeDepositUseCase {
+export default class AccountDepositUseCase {
     // private readonly accountRepository: AccountRepository
 
     async execute({ destination, amount }: IPostEventTypeDeposit) {

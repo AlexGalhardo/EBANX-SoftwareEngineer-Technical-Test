@@ -11,6 +11,7 @@
 - [Heroku](https://www.heroku.com/) to Deploy API
 - Node version: v16.14.2
 - NPM version: 8.5.0
+- ESLINT and Prettier for Typescript
 - Jest for automatic/unit tests
 - And of course, some googling, google translate, stackoverflow, documentation, spotify, and so on, you know...
 

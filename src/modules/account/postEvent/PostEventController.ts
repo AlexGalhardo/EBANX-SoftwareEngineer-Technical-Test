@@ -1,26 +1,29 @@
 import { Request, Response } from "express";
-import { PostEventTypeDepositUseCase } from "./PostEventTypeDepositUseCase";
-import { PostEventTypeTransferUseCase } from "./PostEventTypeTransferUseCase";
-import { PostEventTypeWithdrawUseCase } from "./PostEventTypeWithdrawUseCase";
+import { makeAccountRepository } from "../../../factories/makeAccountRepository";
+import AccountDepositUseCase from "./AccountDepositUseCase";
+import AccountTransferUseCase from "./AccountTransferUseCase";
+import AccountWithdrawUseCase from "./AccountWithdrawUseCase";
 
 class PostEventTypeDepositController {
     async handle(req: Request, res: Response) {
         const { type, destination, amount } = req.body
 
+        const accountRepository = makeAccountRepository()
+
         let postEventResponse = null;
 
         if (type === "deposit") {
-            postEventResponse = await new PostEventTypeDepositUseCase().execute({
+            postEventResponse = await new AccountDepositUseCase(accountRepository).execute({
                 destination, amount
             })
         }
         else if (type === "withdraw") {
-            postEventResponse = await new PostEventTypeWithdrawUseCase().execute({
+            postEventResponse = await new AccountTransferUseCase(accountRepository).execute({
                 destination, amount
             })
         }
         else if (type === "transfer") {
-            postEventResponse = await new PostEventTypeTransferUseCase().execute({
+            postEventResponse = await new AccountTransferUseCase(accountRepository).execute({
                 destination, amount
             })
         }

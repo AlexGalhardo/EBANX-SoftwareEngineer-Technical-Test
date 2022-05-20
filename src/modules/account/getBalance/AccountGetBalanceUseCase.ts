@@ -1,11 +1,15 @@
-import { inMemoryDatabase } from '../../../repositories/inMemoryDatabase';
+import { IAccountRepository } from '../../../ports/IAccountRepository';
 
 interface IGetBalanceUseCase {
     account_id: any
 }
 
-export class GetBalanceUseCase {
-    // private readonly accountRepository: AccountRepository
+export default class AccountGetBalanceUseCase {
+    private readonly accountRepository: IAccountRepository
+
+    constructor(accountRepository: IAccountRepository) {
+        this.accountRepository = accountRepository
+    }
 
     async execute({ account_id }: IGetBalanceUseCase) {
 

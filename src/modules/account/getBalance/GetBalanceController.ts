@@ -1,11 +1,13 @@
 import { Request, Response } from "express";
-import { GetBalanceUseCase } from "./GetBalanceUseCase";
+import AccountGetBalanceUseCase from "./AccountGetBalanceUseCase";
+import { makeAccountRepository } from "../../../factories/makeAccountRepository";
 
 class GetBalanceController {
     async handle(req: Request, res: Response) {
         const { account_id } = req.query
 
-        const getBalanceResponse = await new GetBalanceUseCase().execute({ account_id })
+        const accountRepository = makeAccountRepository()
+        const getBalanceResponse = await new AccountGetBalanceUseCase(accountRepository).execute({ account_id })
 
         return res.status(getBalanceResponse.httpStatusCodeResponse).json(getBalanceResponse.message)
     }

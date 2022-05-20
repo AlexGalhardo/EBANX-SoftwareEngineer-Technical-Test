@@ -1,12 +1,13 @@
 import { Request, Response } from "express";
-import { ResetStateUseCase } from "./ResetStateUseCase";
+import { makeAccountRepository } from "../../../factories/makeAccountRepository";
+import AccountResetStateUseCase from "./AccountResetStateUseCase";
 
 class ResetStateController {
     async handle(req: Request, res: Response) {
-        const resetStateUseCaseResponse = await new ResetStateUseCase().execute()
+        const accountRepository = makeAccountRepository()
+        const resetStateUseCaseResponse = await new AccountResetStateUseCase(accountRepository).execute()
 
-        return res.status(200).json(resetStateUseCaseResponse)
-        // return res.status(200).send(resetStateUseCaseResponse) // for text OK response
+        return res.status(resetStateUseCaseResponse.httpStatusCodeResponse).json(resetStateUseCaseResponse.message)
     }
 }
 

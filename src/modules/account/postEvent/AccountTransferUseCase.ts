@@ -1,14 +1,12 @@
-import { inMemoryDatabase } from '../../../repositories/inMemoryDatabase';
-
-interface IPostEventTypeWithdraw {
+interface IPostEventTypeTransfer {
     destination: string;
     amount: number;
 }
 
-export class PostEventTypeWithdrawUseCase {
+export default class AccountTransferUseCase {
     // private readonly accountRepository: AccountRepository
 
-    async execute({ destination, amount }: IPostEventTypeWithdraw) {
+    async execute({ destination, amount }: IPostEventTypeTransfer) {
 
         const newAccountWithInitialBalanceObject = {
             destination: {
