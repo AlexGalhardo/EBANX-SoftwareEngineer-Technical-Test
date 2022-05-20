@@ -73,22 +73,22 @@
 ### Withdraw from non-existing account
 - POST /event {"type":"withdraw", "origin":"200", "amount":10}
 - 404 0
-- [ ] Done
+- [x] Done
 
 ### Withdraw from existing account
 - POST /event {"type":"withdraw", "origin":"100", "amount":5}
 - 201 {"origin": {"id":"100", "balance":15}}
-- [ ] Done
+- [x] Done
 
 ### Transfer from existing account
 - POST /event {"type":"transfer", "origin":"100", "amount":15, "destination":"300"}
 - 201 {"origin": {"id":"100", "balance":0}, "destination": {"id":"300", "balance":15}}
-- [ ] Done
+- [x] Done
 
 ### Transfer from non-existing account
 - POST /event {"type":"transfer", "origin":"200", "amount":15, "destination":"300"}
 - 404 0
-- [ ] Done
+- [x] Done
 
 ### Publish it to internet
 - [ ] Deployed in Heroku
