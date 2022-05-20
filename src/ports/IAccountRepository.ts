@@ -23,10 +23,16 @@ type typeTransferMessage = {
     }
 }
 
+export type typeResetStateBeforeStartingTestsMethodResponse = { httpStatusCodeResponse: 200, message: 'OK' }
+export type typeGetBalanceMethodResponse = { httpStatusCodeResponse: 200 | 404, message: number }
+export type typeDepositMethodResponse = { httpStatusCodeResponse: 201, message: typeDepositMessage }
+export type typeWithdrawMethodResponse = { httpStatusCodeResponse: 201 | 404, message: 0 | typeWithdrawMessage }
+export type typeTransferMethodResponse = { httpStatusCodeResponse: 201 | 404, message: 0 | typeTransferMessage }
+
 export interface IAccountRepository {
-    resetStateBeforeStartingTests(): void
-    getBalance(account_id: string): { httpStatusCodeResponse: number, message: typeDepositMessage }
-    deposit(destination: string, amount: number): { httpStatusCodeResponse: 201, message: typeDepositMessage }
-    withdraw(destination: string, amount: number): { httpStatusCodeResponse: 201 | 404, message: 0 | typeWithdrawMessage }
-    transfer(destination: string, amount: number): { httpStatusCodeResponse: 201 | 404, message: 0 | typeTransferMessage }
+    resetStateBeforeStartingTests(): typeResetStateBeforeStartingTestsMethodResponse
+    getBalance(account_id: string): typeGetBalanceMethodResponse
+    deposit(destination: string, amount: number): typeDepositMethodResponse
+    withdraw(destination: string, amount: number): typeWithdrawMethodResponse
+    transfer(destination: string, amount: number): typeTransferMethodResponse
 }
