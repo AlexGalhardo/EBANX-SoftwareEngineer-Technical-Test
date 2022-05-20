@@ -19,7 +19,7 @@ class PostEventTypeDepositController {
         }
         else if (type === "withdraw") {
             postEventResponse = await new AccountWithdrawUseCase(accountRepository).execute({
-                destination, amount
+                origin, amount
             })
         }
         else if (type === "transfer") {

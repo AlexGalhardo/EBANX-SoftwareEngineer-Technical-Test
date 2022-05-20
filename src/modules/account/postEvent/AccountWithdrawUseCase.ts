@@ -1,7 +1,7 @@
 import { IAccountRepository } from "../../../ports/IAccountRepository";
 
 interface IAccountWithdrawParams {
-    destination: string;
+    origin: string;
     amount: number;
 }
 
@@ -12,9 +12,9 @@ export default class AccountWithdrawUseCase {
         this.accountRepository = accountRepository
     }
 
-    async execute({ destination, amount }: IAccountWithdrawParams) {
+    async execute({ origin, amount }: IAccountWithdrawParams) {
 
-        const { httpStatusCodeResponse, message } = this.accountRepository.withdraw(destination, amount)
+        const { httpStatusCodeResponse, message } = this.accountRepository.withdraw(origin, amount)
 
         return {
             httpStatusCodeResponse,

@@ -1,8 +1,8 @@
-import { Router } from "express";
+import { Router } from "express"
 
-import ResetStateController from "./modules/account/resetState/ResetStateController";
-import PostEventController from "./modules/account/postEvent/PostEventController";
-import GetBalanceController from "./modules/account/getBalance/GetBalanceController";
+import ResetStateController from "./modules/account/resetState/ResetStateController"
+import PostEventController from "./modules/account/postEvent/PostEventController"
+import GetBalanceController from "./modules/account/getBalance/GetBalanceController"
 
 const routes = Router()
 

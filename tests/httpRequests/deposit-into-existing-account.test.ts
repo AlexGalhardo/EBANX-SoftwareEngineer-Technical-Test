@@ -16,7 +16,7 @@ describe("testing deposit into existing account", () => {
         const responseBodyToBe = {
             destination: {
                 id: "100",
-                balance: 20
+                balance: 10
             }
         }
 
