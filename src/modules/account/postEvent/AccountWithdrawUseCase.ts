@@ -1,24 +1,24 @@
-interface IPostEventTypeWithdraw {
+import { IAccountRepository } from "../../../ports/IAccountRepository";
+
+interface IAccountWithdrawParams {
     destination: string;
     amount: number;
 }
 
 export default class AccountWithdrawUseCase {
-    // private readonly accountRepository: AccountRepository
+    private readonly accountRepository: IAccountRepository
 
-    async execute({ destination, amount }: IPostEventTypeWithdraw) {
+    constructor(accountRepository: IAccountRepository) {
+        this.accountRepository = accountRepository
+    }
 
-        const newAccountWithInitialBalanceObject = {
-            destination: {
-                id: destination,
-                balance: amount
-            }
+    async execute({ destination, amount }: IAccountWithdrawParams) {
+
+        const { httpStatusCodeResponse, message } = this.accountRepository.withdraw(destination, amount)
+
+        return {
+            httpStatusCodeResponse,
+            message
         }
-
-        // this.accountRepository.createAccountWithInitialBalance(newAccountWithInitialBalanceObject)
-
-        inMemoryDatabase.push(newAccountWithInitialBalanceObject)
-
-        return { httpStatusCodeResponse: 201, message: inMemoryDatabase }
     }
 }

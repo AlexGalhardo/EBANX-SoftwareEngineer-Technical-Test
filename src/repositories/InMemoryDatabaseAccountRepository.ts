@@ -15,11 +15,22 @@ export default class InMemoryDatabaseAccountRepository implements IAccountReposi
         IN_MEMORY_DATABASE.length = 0
     }
 
-    createAccountWithInitialBalance() { }
-    depositIntoExistingAccount() { }
-    getBalanceForExistingAccount() { }
-    withdrawFromNonExistingAccount() { }
-    withdrawFromExistingAccount() { }
-    transferFromExistingAccount() { }
-    transferFromNonExistingAccount() { }
+    getBalance(account_id: string) {
+        return {
+            httpStatusCodeResponse: 200,
+            message: 'OK'
+        }
+    }
+
+    deposit(destination: string, amount: number) {
+        return { httpStatusCodeResponse: 201, message: 'ok' }
+    }
+
+    withdraw(destination: string, amount: number) {
+        return { httpStatusCodeResponse: 201, message: 'ok' }
+    }
+
+    transfer(destination: string, amount: number) {
+        return { httpStatusCodeResponse: 201, message: 'ok' }
+    }
 }

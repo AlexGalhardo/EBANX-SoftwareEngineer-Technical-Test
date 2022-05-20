@@ -1,10 +1,7 @@
 export interface IAccountRepository {
-    resetStateBeforeStartingTests(): void;
-    createAccountWithInitialBalance(): void;
-    depositIntoExistingAccount(): void;
-    getBalanceForExistingAccount(): void;
-    withdrawFromNonExistingAccount(): void;
-    withdrawFromExistingAccount(): void;
-    transferFromExistingAccount(): void;
-    transferFromNonExistingAccount(): void;
+    resetStateBeforeStartingTests(): void
+    getBalance(account_id: string): { httpStatusCodeResponse: number, message: string }
+    deposit(destination: string, amount: number): { httpStatusCodeResponse: number, message: string }
+    withdraw(destination: string, amount: number): { httpStatusCodeResponse: number, message: string }
+    transfer(destination: string, amount: number): { httpStatusCodeResponse: number, message: string }
 }

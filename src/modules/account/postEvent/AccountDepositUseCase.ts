@@ -1,43 +1,24 @@
-import InMemoryDatabaseAccountRepository from '../../../repositories/InMemoryDatabaseAccountRepository';
+import { IAccountRepository } from '../../../ports/IAccountRepository';
 
-interface IPostEventTypeDeposit {
+interface IAccountDepositParams {
     destination: string;
     amount: number;
 }
 
 export default class AccountDepositUseCase {
-    // private readonly accountRepository: AccountRepository
+    private readonly accountRepository: IAccountRepository
 
-    async execute({ destination, amount }: IPostEventTypeDeposit) {
+    constructor(accountRepository: IAccountRepository) {
+        this.accountRepository = accountRepository
+    }
 
-        const newAccountWithInitialBalanceObject = {
-            id: destination,
-            balance: amount
+    async execute({ destination, amount }: IAccountDepositParams) {
+
+        const { httpStatusCodeResponse, message } = this.accountRepository.deposit(destination, amount)
+
+        return {
+            httpStatusCodeResponse,
+            message
         }
-
-        // this.accountRepository.deposit(newAccountWithInitialBalanceObject)
-        let accountAlreadyExist = true
-        if (accountAlreadyExist) {
-            return {
-                httpStatusCodeResponse: 201, message: {
-                    destination: {
-                        id: destination,
-                        balance: 20
-                    }
-                }
-            }
-        }
-        else {
-            return {
-                httpStatusCodeResponse: 201, message: {
-                    destination: {
-                        id: destination,
-                        balance: amount
-                    }
-                }
-            }
-        }
-
-        // return { httpStatusCodeResponse: 201, message: inMemoryDatabase }
     }
 }

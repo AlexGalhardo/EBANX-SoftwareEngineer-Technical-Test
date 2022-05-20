@@ -1,24 +1,24 @@
-interface IPostEventTypeTransfer {
+import { IAccountRepository } from "../../../ports/IAccountRepository";
+
+interface IAccountTransferParams {
     destination: string;
     amount: number;
 }
 
 export default class AccountTransferUseCase {
-    // private readonly accountRepository: AccountRepository
+    private readonly accountRepository: IAccountRepository
 
-    async execute({ destination, amount }: IPostEventTypeTransfer) {
+    constructor(accountRepository: IAccountRepository) {
+        this.accountRepository = accountRepository
+    }
 
-        const newAccountWithInitialBalanceObject = {
-            destination: {
-                id: destination,
-                balance: amount
-            }
+    async execute({ destination, amount }: IAccountTransferParams) {
+
+        const { httpStatusCodeResponse, message } = this.accountRepository.transfer(destination, amount)
+
+        return {
+            httpStatusCodeResponse,
+            message
         }
-
-        // this.accountRepository.createAccountWithInitialBalance(newAccountWithInitialBalanceObject)
-
-        inMemoryDatabase.push(newAccountWithInitialBalanceObject)
-
-        return { httpStatusCodeResponse: 201, message: inMemoryDatabase }
     }
 }
