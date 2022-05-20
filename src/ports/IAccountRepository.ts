@@ -34,5 +34,5 @@ export interface IAccountRepository {
     getBalance(account_id: string): typeGetBalanceMethodResponse
     deposit(destination: string, amount: number): typeDepositMethodResponse
     withdraw(destination: string, amount: number): typeWithdrawMethodResponse
-    transfer(destination: string, amount: number): typeTransferMethodResponse
+    transfer(origin: string, amount: number, destination: string): typeTransferMethodResponse
 }

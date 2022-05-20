@@ -1,8 +1,9 @@
 import { IAccountRepository } from "../../../ports/IAccountRepository";
 
 interface IAccountTransferParams {
-    destination: string;
+    origin: string;
     amount: number;
+    destination: string;
 }
 
 export default class AccountTransferUseCase {
@@ -12,9 +13,9 @@ export default class AccountTransferUseCase {
         this.accountRepository = accountRepository
     }
 
-    async execute({ destination, amount }: IAccountTransferParams) {
+    async execute({ origin, amount, destination }: IAccountTransferParams) {
 
-        const { httpStatusCodeResponse, message } = this.accountRepository.transfer(destination, amount)
+        const { httpStatusCodeResponse, message } = this.accountRepository.transfer(origin, amount, destination)
 
         return {
             httpStatusCodeResponse,

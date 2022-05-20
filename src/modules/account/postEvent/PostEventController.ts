@@ -6,7 +6,7 @@ import AccountWithdrawUseCase from "./AccountWithdrawUseCase";
 
 class PostEventTypeDepositController {
     async handle(req: Request, res: Response) {
-        const { type, destination, amount } = req.body
+        const { type, origin, amount, destination } = req.body
 
         const accountRepository = makeAccountRepository()
 
@@ -24,7 +24,7 @@ class PostEventTypeDepositController {
         }
         else if (type === "transfer") {
             postEventResponse = await new AccountTransferUseCase(accountRepository).execute({
-                destination, amount
+                origin, amount, destination
             })
         }
 
