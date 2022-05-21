@@ -1,4 +1,4 @@
-import { IAccountRepository } from '../../../ports/IAccountRepository';
+import { IAccountRepository } from '../../../ports/IAccountRepository'
 
 interface IAccountGetBalanceParams {
     account_id: string

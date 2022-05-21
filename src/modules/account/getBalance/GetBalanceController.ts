@@ -1,6 +1,6 @@
-import { Request, Response } from "express";
-import AccountGetBalanceUseCase from "./AccountGetBalanceUseCase";
-import { makeAccountRepository } from "../../../factories/makeAccountRepository";
+import { Request, Response } from "express"
+import AccountGetBalanceUseCase from "./AccountGetBalanceUseCase"
+import { makeAccountRepository } from "../../../factories/makeAccountRepository"
 
 class GetBalanceController {
     async handle(req: Request, res: Response) {
@@ -12,4 +12,4 @@ class GetBalanceController {
     }
 }
 
-export default new GetBalanceController();
+export default new GetBalanceController()

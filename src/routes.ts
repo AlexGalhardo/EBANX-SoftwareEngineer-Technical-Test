@@ -4,9 +4,7 @@ import ResetStateController from "./modules/account/resetState/ResetStateControl
 import PostEventController from "./modules/account/postEvent/PostEventController"
 import GetBalanceController from "./modules/account/getBalance/GetBalanceController"
 
-const routes = Router()
-
-export default routes
+export default Router()
     .post('/reset', ResetStateController.handle)
     .post('/event', PostEventController.handle)
     .get('/balance', GetBalanceController.handle)

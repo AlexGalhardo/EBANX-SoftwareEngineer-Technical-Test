@@ -1,8 +1,20 @@
-import request from 'supertest';
-import app from '../../src/app';
+import request from 'supertest'
+import app from '../../src/app'
 
 describe("testing withdraw from existing account", () => {
+
     it("it should return http status code 201 with correct json response", async () => {
+
+        await request(app)
+            .post("/event")
+            .send({
+                "type": "deposit",
+                "destination": "100",
+                "amount": 20
+            })
+            .set('Content-Type', 'application/json')
+            .set('Accept', 'application/json')
+
         const response = await request(app)
             .post("/event")
             .send({
@@ -20,7 +32,7 @@ describe("testing withdraw from existing account", () => {
             }
         }
 
-        expect(response.statusCode).toBe(201);
-        expect(JSON.stringify(response.body)).toBe(JSON.stringify(responseBodyToBe))
+        expect(response.statusCode).toBe(201)
+        expect(JSON.stringify(response.body)).toEqual(JSON.stringify(responseBodyToBe))
     });
 });

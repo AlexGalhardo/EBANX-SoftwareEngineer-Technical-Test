@@ -1,14 +1,21 @@
 {
-    "compilerOptions": {
-      "target": "es2020",
-      "types": ["node", "jest"],
-      "sourceMap": true,
-      "outDir": "dist",
-      "rootDir": "src/",
-      "strict": true,
-      "lib": [
-        "esnext"
-      ],
-      "esModuleInterop": true
-    }
+  "compilerOptions": {
+    "target": "es2020",
+    "types": ["node", "jest"],
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "removeComments": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "./tests"
+  ]
 }
