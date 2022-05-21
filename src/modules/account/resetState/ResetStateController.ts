@@ -4,10 +4,9 @@ import AccountResetStateUseCase from "./AccountResetStateUseCase";
 
 class ResetStateController {
     async handle(req: Request, res: Response) {
-        const accountRepository = makeAccountRepository()
-        const resetStateUseCaseResponse = await new AccountResetStateUseCase(accountRepository).execute()
+        const resetStateUseCaseResponse = await new AccountResetStateUseCase(makeAccountRepository()).execute()
 
-        return res.status(resetStateUseCaseResponse.httpStatusCodeResponse).json(resetStateUseCaseResponse.message)
+        return res.status(resetStateUseCaseResponse.httpStatusCodeResponse).send(resetStateUseCaseResponse.message)
     }
 }
 

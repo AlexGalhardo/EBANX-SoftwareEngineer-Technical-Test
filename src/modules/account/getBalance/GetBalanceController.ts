@@ -6,8 +6,7 @@ class GetBalanceController {
     async handle(req: Request, res: Response) {
         const { account_id } = req.query as { account_id: string }
 
-        const accountRepository = makeAccountRepository()
-        const getBalanceResponse = await new AccountGetBalanceUseCase(accountRepository).execute({ account_id })
+        const getBalanceResponse = await new AccountGetBalanceUseCase(makeAccountRepository()).execute({ account_id })
 
         return res.status(getBalanceResponse.httpStatusCodeResponse).json(getBalanceResponse.message)
     }

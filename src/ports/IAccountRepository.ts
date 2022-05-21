@@ -1,18 +1,18 @@
-type typeDepositMessage = {
+export type typeDepositMessage = {
     destination: {
         id: string,
         balance: number
     }
 }
 
-type typeWithdrawMessage = {
+export type typeWithdrawMessage = {
     origin: {
         id: string,
         balance: number
     }
 }
 
-type typeTransferMessage = {
+export type typeTransferMessage = {
     origin: {
         id: string,
         balance: number

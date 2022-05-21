@@ -3,27 +3,33 @@ import { makeAccountRepository } from "../../../factories/makeAccountRepository"
 import AccountDepositUseCase from "./AccountDepositUseCase";
 import AccountTransferUseCase from "./AccountTransferUseCase";
 import AccountWithdrawUseCase from "./AccountWithdrawUseCase";
+import {
+    typeDepositMessage,
+    typeWithdrawMessage,
+    typeTransferMessage
+} from "../../../ports/IAccountRepository";
 
 class PostEventTypeDepositController {
     async handle(req: Request, res: Response) {
         const { type, origin, amount, destination } = req.body
 
-        const accountRepository = makeAccountRepository()
-
-        let postEventResponse = null;
+        let postEventResponse: {
+            httpStatusCodeResponse: number,
+            message: number | typeDepositMessage | typeWithdrawMessage | typeTransferMessage
+        };
 
         if (type === "deposit") {
-            postEventResponse = await new AccountDepositUseCase(accountRepository).execute({
+            postEventResponse = await new AccountDepositUseCase(makeAccountRepository()).execute({
                 destination, amount
             })
         }
         else if (type === "withdraw") {
-            postEventResponse = await new AccountWithdrawUseCase(accountRepository).execute({
+            postEventResponse = await new AccountWithdrawUseCase(makeAccountRepository()).execute({
                 origin, amount
             })
         }
         else if (type === "transfer") {
-            postEventResponse = await new AccountTransferUseCase(accountRepository).execute({
+            postEventResponse = await new AccountTransferUseCase(makeAccountRepository()).execute({
                 origin, amount, destination
             })
         }

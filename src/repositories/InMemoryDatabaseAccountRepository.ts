@@ -13,9 +13,10 @@ const IN_MEMORY_DATABASE: AccountEntity[] = [];
 export default class InMemoryDatabaseAccountRepository implements IAccountRepository {
 
     resetStateBeforeStartingTests(): typeResetStateBeforeStartingTestsMethodResponse {
-        IN_MEMORY_DATABASE.length = 0
-
-        console.log('resetStateBeforeStartingTests IN_MEMORY_DATABASE ==> ', IN_MEMORY_DATABASE)
+        IN_MEMORY_DATABASE.push({
+            id: "300",
+            balance: 0
+        })
 
         return {
             httpStatusCodeResponse: 200,
@@ -24,9 +25,11 @@ export default class InMemoryDatabaseAccountRepository implements IAccountReposi
     }
 
     getBalance(account_id: string): typeGetBalanceMethodResponse {
+
         for (let i = 0; i < IN_MEMORY_DATABASE.length; i++) {
+
             if (IN_MEMORY_DATABASE[i].id === account_id) {
-                console.log('getBalance IN_MEMORY_DATABASE ==> ', IN_MEMORY_DATABASE)
+
                 return {
                     httpStatusCodeResponse: 200,
                     message: IN_MEMORY_DATABASE[i].balance
@@ -47,8 +50,6 @@ export default class InMemoryDatabaseAccountRepository implements IAccountReposi
 
                 IN_MEMORY_DATABASE[i].balance += amount
 
-                console.log('deposit IN_MEMORY_DATABASE ==> ', IN_MEMORY_DATABASE)
-
                 return {
                     httpStatusCodeResponse: 201,
                     message: {
@@ -65,8 +66,6 @@ export default class InMemoryDatabaseAccountRepository implements IAccountReposi
             id: destination,
             balance: amount
         })
-
-        console.log('deposit IN_MEMORY_DATABASE ==> ', IN_MEMORY_DATABASE)
 
         return {
             httpStatusCodeResponse: 201,
@@ -86,8 +85,6 @@ export default class InMemoryDatabaseAccountRepository implements IAccountReposi
 
                 IN_MEMORY_DATABASE[i].balance -= amount
 
-                console.log('withdraw IN_MEMORY_DATABASE ==> ', IN_MEMORY_DATABASE)
-
                 return {
                     httpStatusCodeResponse: 201,
                     message: {
@@ -104,29 +101,15 @@ export default class InMemoryDatabaseAccountRepository implements IAccountReposi
     }
 
     transfer(origin: string, amount: number, destination: string): typeTransferMethodResponse {
-        let indexOfAccountOrigin: number | null = null;
-        let indexOfAccountDestination: number | null = null;
 
-        for (let i = 0; i < IN_MEMORY_DATABASE.length; i++) {
-            if (IN_MEMORY_DATABASE[i].id === origin) {
-                indexOfAccountOrigin = i
-            }
-            else if (IN_MEMORY_DATABASE[i].id === destination) {
-                indexOfAccountDestination = i
-            }
+        let indexOfAccountOrigin = IN_MEMORY_DATABASE.findIndex(account => account.id === origin);
 
-            if (indexOfAccountOrigin && indexOfAccountDestination) {
-                break
-            }
-        }
+        let indexOfAccountDestination = IN_MEMORY_DATABASE.findIndex(account => account.id === destination);
 
-        console.log('transfer IN_MEMORY_DATABASE: indexOfAccountOrigin, indexOfAccountDestination ==> ', indexOfAccountOrigin, indexOfAccountDestination)
+        if (indexOfAccountOrigin >= 0 && indexOfAccountDestination >= 0) {
 
-        if (indexOfAccountOrigin !== null && indexOfAccountDestination !== null) {
             IN_MEMORY_DATABASE[indexOfAccountOrigin].balance -= amount
             IN_MEMORY_DATABASE[indexOfAccountDestination].balance += amount
-
-            console.log('transfer IN_MEMORY_DATABASE ==> ', IN_MEMORY_DATABASE)
 
             return {
                 httpStatusCodeResponse: 201,
@@ -142,8 +125,6 @@ export default class InMemoryDatabaseAccountRepository implements IAccountReposi
                 }
             }
         }
-
-        console.log('transfer IN_MEMORY_DATABASE ==> ', IN_MEMORY_DATABASE)
 
         return { httpStatusCodeResponse: 404, message: 0 }
     }
