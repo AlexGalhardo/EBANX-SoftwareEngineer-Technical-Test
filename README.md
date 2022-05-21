@@ -118,7 +118,15 @@
 - Have fun
 ## Some Prints
 
-
+![vscode-tests](https://user-images.githubusercontent.com/19540357/169660792-8c4c642c-586b-4779-aedc-23082d421386.png)
+![insomnia-1](https://user-images.githubusercontent.com/19540357/169660793-ace2cb26-7d68-45fd-a14f-11c881447d8c.png)
+![insomnia-2](https://user-images.githubusercontent.com/19540357/169660798-fdfef2a6-e949-4479-88d4-963ea5ff8860.png)
+![ebanx-test-2](https://user-images.githubusercontent.com/19540357/169660786-89c93f33-5009-4940-a240-c4974ac72e0d.png)
+![ebanx-test-1](https://user-images.githubusercontent.com/19540357/169660790-7e8573a8-3cb1-404d-8467-4b102aa6b806.png)
+![terminal-heroku-1](https://user-images.githubusercontent.com/19540357/169660795-d98be922-32e0-4620-a11a-8bb35ebe903c.png)
+![terminal-heroku-2](https://user-images.githubusercontent.com/19540357/169660796-5a0bf599-1fad-4ef0-a809-17b87f885be4.png)
+![terminal-heroku-3](https://user-images.githubusercontent.com/19540357/169660812-5638e9ae-9e5b-4385-8ffd-66e0c718bb62.png)
 ## My Main Reference to buid this project this way
 - TheWisePad from Otavios Lemos book "Arquitetura Limpa Na Prática": https://github.com/otaviolemos/thewisepad-core
+- ![tests-thewisepad](https://user-images.githubusercontent.com/19540357/169660799-bb09ec33-81d1-43fd-9b6c-3aade5ec6187.png)
 
