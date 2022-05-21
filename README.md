@@ -1,13 +1,16 @@
 ## Software Engineer Technical Test EBANX
 
-#### Author: Alex Galhardo Vieira <aleexgvieira@gmail.com> / https://github.com/AlexGalhardo
+#### Author: Alex Galhardo Vieira
+- aleexgvieira@gmail.com
+- https://github.com/AlexGalhardo
+- https://www.linkedin.com/in/alexgalhardo/
 ## Tools I Used
 - Typescript
 - LinuxMint 20.3
-- Bash Terminal 
+- Bash Terminal
 - Git (of course)
 - VSCode
-- [Insomnia](https://insomnia.rest/download) to Test HTTP Requests 
+- [Insomnia](https://insomnia.rest/download) to Test HTTP Requests
 - [Heroku](https://www.heroku.com/) to Deploy API
 - Node version: v16.14.2
 - NPM version: 8.5.0
@@ -35,12 +38,11 @@
 - style: improve code quality in this commit
 - test: improve testing/tests in this commit
 
-## Software Architecture/Principles
+## Software Architecture | Principles
 - I used some Clean Architecture principles (I don't master the principles of clean architecture yet, I started studying these last few months)
 - My main reference about this topic is the book "Arquitetura Lima na Prática" from Otavio Lemos: https://www.otaviolemos.com.br/
-- Some boilerplate of this project I took from previous projects I've in my github for reference
-- The Bussiness Logic is inside "UseCase.ts" files
-- The automated/unit tests weren't necessary I know, I did more for learning and putting TDD into practice
+- Some boilerplate of this project I took from previous projects I've in my github for references
+- The automated/unit tests weren't necessary I know, I did more for learning and practice a little TDD
 ## Instructions / To Dos
 
 - <strong>Remember to save data in memory Alex!</strong>
@@ -94,14 +96,22 @@
 - [ ] Deployed in Heroku
 
 ### Test API
-- [ ] All tests passing at https://ipkiss.pragmazero.com/
+- [x] All tests passing at https://ipkiss.pragmazero.com/
 
 ### Send Source Code
-- [ ] Send to: https://app3.greenhouse.io/tests/0398188f1ef1c31ea16d6be780318d61?utm_medium=email&utm_source=TakeHomeTest
+- [x] Send to: https://app3.greenhouse.io/tests/0398188f1ef1c31ea16d6be780318d61?utm_medium=email&utm_source=TakeHomeTest
 
 ## How to run this project locally
+- Have sure to have NodeJS v16+ and NPM v8+ installed locally in your machine
+- $ npm install
+   - To start API Server: $ npm start
+   - To build this project to JavaScript/Deploy: $ npm run build
+   - To run tests: $ npm test
+   - To watch tests while develop/refactor: $ npm run test:watch
 
 ## Some Prints
 
-## LICENSE
-Copyright (c) 18-05-2022 ~ present, Alex Galhardo
+
+## My Main Reference to buid this project this way
+- TheWisePad from Otavios Lemos book "Arquitetura Limpa Na Prática": https://github.com/otaviolemos/thewisepad-core
+
