@@ -93,7 +93,9 @@
 - [x] Done
 
 ### Publish it to internet
-- [ ] Deployed in Heroku
+- [x] Deployed in Heroku
+- [x] API URL: https://alexgalhardo-api-ebanx.herokuapp.com/
+- <strong>IMPORTANT: Heroku takes about 1-2 minutes to load the api when it has not received requests for a long time. If you can't connect, try again. </strong>
 
 ### Test API
 - [x] All tests passing at https://ipkiss.pragmazero.com/
@@ -110,6 +112,10 @@
    - To run tests: $ npm test
    - To watch tests while develop/refactor: $ npm run test:watch
 
+## How to use/test this API with INSOMNIA
+- Download Insomnia Http Requests Client in: https://insomnia.rest/download
+- Import file: INSOMNIA-TESTE-TECNICO-API-EBANX-HTTP-REQUESTS.json into your Insomnia
+- Have fun
 ## Some Prints
 
 

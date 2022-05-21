@@ -13,6 +13,8 @@ const IN_MEMORY_DATABASE: AccountEntity[] = []
 export default class InMemoryDatabaseAccountRepository implements IAccountRepository {
 
     resetStateBeforeStartingTests(): typeResetStateBeforeStartingTestsMethodResponse {
+        IN_MEMORY_DATABASE.length = 0
+
         IN_MEMORY_DATABASE.push({
             id: "300",
             balance: 0
