@@ -104,8 +104,9 @@
 ## How to run this project locally
 - Have sure to have NodeJS v16+ and NPM v8+ installed locally in your machine
 - $ npm install
-   - To start API Server: $ npm start
+   - To start API Server Typescript Development: $ npm run dev
    - To build this project to JavaScript/Deploy: $ npm run build
+   - To start API server with JavaScript: $ npm start
    - To run tests: $ npm test
    - To watch tests while develop/refactor: $ npm run test:watch
 
