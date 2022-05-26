@@ -126,7 +126,8 @@
 ![terminal-heroku-1](https://user-images.githubusercontent.com/19540357/169660795-d98be922-32e0-4620-a11a-8bb35ebe903c.png)
 ![terminal-heroku-2](https://user-images.githubusercontent.com/19540357/169660796-5a0bf599-1fad-4ef0-a809-17b87f885be4.png)
 ![terminal-heroku-3](https://user-images.githubusercontent.com/19540357/169660812-5638e9ae-9e5b-4385-8ffd-66e0c718bb62.png)
-## My Main Reference to buid this project this way
+
+## My Main Reference to build this project this way
 - TheWisePad from Otavios Lemos book "Arquitetura Limpa Na Prática": https://github.com/otaviolemos/thewisepad-core
 - ![tests-thewisepad](https://user-images.githubusercontent.com/19540357/169660799-bb09ec33-81d1-43fd-9b6c-3aade5ec6187.png)
 
