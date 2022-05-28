@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+
 import { makeAccountRepository } from "../../../factories/makeAccountRepository";
 import AccountGetBalanceUseCase from "./AccountGetBalanceUseCase";
 

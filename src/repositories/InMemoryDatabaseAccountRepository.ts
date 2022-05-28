@@ -48,9 +48,7 @@ export default class InMemoryDatabaseAccountRepository implements IAccountReposi
 
     deposit(destination: string, amount: number): typeDepositMethodResponse {
         for (let i = 0; i < IN_MEMORY_ACCOUNTS_DATABASE.length; i++) {
-
             if (IN_MEMORY_ACCOUNTS_DATABASE[i].id === destination) {
-
                 IN_MEMORY_ACCOUNTS_DATABASE[i].balance += amount;
 
                 return {

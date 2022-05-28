@@ -1,0 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.HTTP_STATUS_CODE_INTERNAL_SERVER_ERROR = exports.HTTP_STATUS_CODE_NOT_FOUND = exports.HTTP_STATUS_CODE_BAD_REQUEST = exports.HTTP_STATUS_CODE_CREATED = exports.HTTP_STATUS_CODE_OK = void 0;
+exports.HTTP_STATUS_CODE_OK = 200;
+exports.HTTP_STATUS_CODE_CREATED = 201;
+exports.HTTP_STATUS_CODE_BAD_REQUEST = 400;
+exports.HTTP_STATUS_CODE_NOT_FOUND = 404;
+exports.HTTP_STATUS_CODE_INTERNAL_SERVER_ERROR = 500;
