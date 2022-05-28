@@ -10,7 +10,7 @@ const constants_1 = require("./shared/constants");
 const app = (0, express_1.default)();
 app.use(express_1.default.json())
     .use(routes_1.default)
-    .use((error, request, response, next) => {
+    .use((error, request, response) => {
     if (error instanceof Error) {
         return response.status(constants_1.HTTP_STATUS_CODE_BAD_REQUEST).json({
             message: error.message,
