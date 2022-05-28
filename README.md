@@ -49,47 +49,47 @@
 
 ### Reset state before starting tests
 - POST /reset
-- 200 OK
+- HTTP_STATUS_CODE_OK OK
 - [x] Done
 
 ### Get balance for non-existing account
 - GET /balance?account_id=1234
-- 404 0
+- HTTP_STATUS_CODE_NOT_FOUND 0
 - [x] Done
 
 ### Create account with initial balance
 - POST /event {"type":"deposit", "destination":"100", "amount":10}
-- 201 {"destination": {"id":"100", "balance":10}}
+- HTTP_STATUS_CODE_CREATED {"destination": {"id":"100", "balance":10}}
 - [x] Done
 
 ### Deposit into existing account
 - POST /event {"type":"deposit", "destination":"100", "amount":10}
-- 201 {"destination": {"id":"100", "balance":20}}
+- HTTP_STATUS_CODE_CREATED {"destination": {"id":"100", "balance":20}}
 - [x] Done
 
 ### Get balance for existing account
 - GET /balance?account_id=100
-- 200 20
+- HTTP_STATUS_CODE_OK 20
 - [x] Done
 
 ### Withdraw from non-existing account
-- POST /event {"type":"withdraw", "origin":"200", "amount":10}
-- 404 0
+- POST /event {"type":"withdraw", "origin":"HTTP_STATUS_CODE_OK", "amount":10}
+- HTTP_STATUS_CODE_NOT_FOUND 0
 - [x] Done
 
 ### Withdraw from existing account
 - POST /event {"type":"withdraw", "origin":"100", "amount":5}
-- 201 {"origin": {"id":"100", "balance":15}}
+- HTTP_STATUS_CODE_CREATED {"origin": {"id":"100", "balance":15}}
 - [x] Done
 
 ### Transfer from existing account
 - POST /event {"type":"transfer", "origin":"100", "amount":15, "destination":"300"}
-- 201 {"origin": {"id":"100", "balance":0}, "destination": {"id":"300", "balance":15}}
+- HTTP_STATUS_CODE_CREATED {"origin": {"id":"100", "balance":0}, "destination": {"id":"300", "balance":15}}
 - [x] Done
 
 ### Transfer from non-existing account
-- POST /event {"type":"transfer", "origin":"200", "amount":15, "destination":"300"}
-- 404 0
+- POST /event {"type":"transfer", "origin":"HTTP_STATUS_CODE_OK", "amount":15, "destination":"300"}
+- HTTP_STATUS_CODE_NOT_FOUND 0
 - [x] Done
 
 ### Publish it to internet
@@ -122,7 +122,7 @@
 ![insomnia-1](https://user-images.githubusercontent.com/19540357/169660793-ace2cb26-7d68-45fd-a14f-11c881447d8c.png)
 ![insomnia-2](https://user-images.githubusercontent.com/19540357/169660798-fdfef2a6-e949-4479-88d4-963ea5ff8860.png)
 ![ebanx-test-2](https://user-images.githubusercontent.com/19540357/169660786-89c93f33-5009-4940-a240-c4974ac72e0d.png)
-![ebanx-test-1](https://user-images.githubusercontent.com/19540357/169660790-7e8573a8-3cb1-404d-8467-4b102aa6b806.png)
+![ebanx-test-1](https://user-images.githubusercontent.com/19540357/169660790-7e8573a8-3cb1-HTTP_STATUS_CODE_NOT_FOUNDd-8467-4b102aa6b806.png)
 ![terminal-heroku-1](https://user-images.githubusercontent.com/19540357/169660795-d98be922-32e0-4620-a11a-8bb35ebe903c.png)
 ![terminal-heroku-2](https://user-images.githubusercontent.com/19540357/169660796-5a0bf599-1fad-4ef0-a809-17b87f885be4.png)
 ![terminal-heroku-3](https://user-images.githubusercontent.com/19540357/169660812-5638e9ae-9e5b-4385-8ffd-66e0c718bb62.png)

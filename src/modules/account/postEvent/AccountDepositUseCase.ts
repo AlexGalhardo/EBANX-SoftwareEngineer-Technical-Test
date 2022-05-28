@@ -1,4 +1,4 @@
-import { IAccountRepository } from '../../../ports/IAccountRepository';
+import { IAccountRepository } from "../../../ports/IAccountRepository";
 
 interface IAccountDepositParams {
     destination: string;
@@ -6,19 +6,21 @@ interface IAccountDepositParams {
 }
 
 export default class AccountDepositUseCase {
-    private readonly accountRepository: IAccountRepository
+    private readonly accountRepository: IAccountRepository;
 
     constructor(accountRepository: IAccountRepository) {
-        this.accountRepository = accountRepository
+        this.accountRepository = accountRepository;
     }
 
     async execute({ destination, amount }: IAccountDepositParams) {
-
-        const { httpStatusCodeResponse, message } = this.accountRepository.deposit(destination, amount)
+        const { httpStatusCodeResponse, message } = this.accountRepository.deposit(
+            destination,
+            amount,
+        );
 
         return {
             httpStatusCodeResponse,
-            message
-        }
+            message,
+        };
     }
 }

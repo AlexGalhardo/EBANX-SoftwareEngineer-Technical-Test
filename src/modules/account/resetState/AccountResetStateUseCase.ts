@@ -1,16 +1,16 @@
-import { IAccountRepository } from '../../../ports/IAccountRepository';
+import { IAccountRepository } from "../../../ports/IAccountRepository";
+import { HTTP_STATUS_CODE_OK } from "../../../shared/constants";
 
 export default class AccountResetStateUseCase {
-    private readonly accountRepository: IAccountRepository
+    private readonly accountRepository: IAccountRepository;
 
     constructor(accountRepository: IAccountRepository) {
-        this.accountRepository = accountRepository
+        this.accountRepository = accountRepository;
     }
 
     async execute() {
+        this.accountRepository.resetStateBeforeStartingTests();
 
-        this.accountRepository.resetStateBeforeStartingTests()
-
-        return { httpStatusCodeResponse: 200, message: 'OK' }
+        return { httpStatusCodeResponse: HTTP_STATUS_CODE_OK, message: "OK" };
     }
 }

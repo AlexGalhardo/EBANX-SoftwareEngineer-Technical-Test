@@ -4,9 +4,13 @@ import AccountResetStateUseCase from "./AccountResetStateUseCase";
 
 class ResetStateController {
     async handle(req: Request, res: Response) {
-        const resetStateUseCaseResponse = await new AccountResetStateUseCase(makeAccountRepository()).execute()
+        const resetStateUseCaseResponse = await new AccountResetStateUseCase(
+            makeAccountRepository(),
+        ).execute();
 
-        return res.status(resetStateUseCaseResponse.httpStatusCodeResponse).send(resetStateUseCaseResponse.message)
+        return res
+            .status(resetStateUseCaseResponse.httpStatusCodeResponse)
+            .send(resetStateUseCaseResponse.message);
     }
 }
 

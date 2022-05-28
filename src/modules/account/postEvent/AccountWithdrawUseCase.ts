@@ -6,19 +6,18 @@ interface IAccountWithdrawParams {
 }
 
 export default class AccountWithdrawUseCase {
-    private readonly accountRepository: IAccountRepository
+    private readonly accountRepository: IAccountRepository;
 
     constructor(accountRepository: IAccountRepository) {
-        this.accountRepository = accountRepository
+        this.accountRepository = accountRepository;
     }
 
     async execute({ origin, amount }: IAccountWithdrawParams) {
-
-        const { httpStatusCodeResponse, message } = this.accountRepository.withdraw(origin, amount)
+        const { httpStatusCodeResponse, message } = this.accountRepository.withdraw(origin, amount);
 
         return {
             httpStatusCodeResponse,
-            message
-        }
+            message,
+        };
     }
 }

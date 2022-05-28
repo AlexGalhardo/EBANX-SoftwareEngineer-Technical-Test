@@ -7,19 +7,22 @@ interface IAccountTransferParams {
 }
 
 export default class AccountTransferUseCase {
-    private readonly accountRepository: IAccountRepository
+    private readonly accountRepository: IAccountRepository;
 
     constructor(accountRepository: IAccountRepository) {
-        this.accountRepository = accountRepository
+        this.accountRepository = accountRepository;
     }
 
     async execute({ origin, amount, destination }: IAccountTransferParams) {
-
-        const { httpStatusCodeResponse, message } = this.accountRepository.transfer(origin, amount, destination)
+        const { httpStatusCodeResponse, message } = this.accountRepository.transfer(
+            origin,
+            amount,
+            destination,
+        );
 
         return {
             httpStatusCodeResponse,
-            message
-        }
+            message,
+        };
     }
 }
