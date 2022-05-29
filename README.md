@@ -4,6 +4,7 @@
 - aleexgvieira@gmail.com
 - https://github.com/AlexGalhardo
 - https://www.linkedin.com/in/alexgalhardo/
+
 ## Tools I Used
 - Typescript
 - LinuxMint 20.3
@@ -106,19 +107,25 @@
 ## How to run this project locally
 - Have sure to have NodeJS v16+ and NPM v8+ installed locally in your machine
 - $ npm install
-   - To start API Server Typescript Development: `$ npm run dev`
-   - To build this project to JavaScript/Deploy: `$ npm run build`
-   - To start API server with JavaScript: `$ npm start`
-   - To run tests: `$ npm test`
-   - To watch tests while develop/refactor: `$ npm run test:watch`
+   - To start API Server Typescript Development:
+      - `$ npm run dev`
+   - To build this project to JavaScript/Deploy:
+      - `$ npm run build`
+   - To start API server with JavaScript:
+      - `$ npm start`
+   - To run tests:
+      - `$ npm test`
+   - To watch tests while develop/refactor:
+      - `$ npm run test:watch`
 
 ## How to use/test this API with INSOMNIA
 - Download Insomnia Http Requests Client in: https://insomnia.rest/download
-- Import file: INSOMNIA-TESTE-TECNICO-API-EBANX-HTTP-REQUESTS.json into your Insomnia
+- Import file: `INSOMNIA-TESTE-TECNICO-API-EBANX-HTTP-REQUESTS.json` into your Insomnia
 - Have fun
 ## Some Prints
 
 ![vscode-tests](https://user-images.githubusercontent.com/19540357/169660792-8c4c642c-586b-4779-aedc-23082d421386.png)
+![terminal-precommit](https://user-images.githubusercontent.com/19540357/170873521-5dfb0f78-5253-47cc-8469-a8593394bc3f.png)
 ![insomnia-1](https://user-images.githubusercontent.com/19540357/169660793-ace2cb26-7d68-45fd-a14f-11c881447d8c.png)
 ![insomnia-2](https://user-images.githubusercontent.com/19540357/169660798-fdfef2a6-e949-4479-88d4-963ea5ff8860.png)
 ![ebanx-test-2](https://user-images.githubusercontent.com/19540357/169660786-89c93f33-5009-4940-a240-c4974ac72e0d.png)
@@ -127,7 +134,10 @@
 ![terminal-heroku-2](https://user-images.githubusercontent.com/19540357/169660796-5a0bf599-1fad-4ef0-a809-17b87f885be4.png)
 ![terminal-heroku-3](https://user-images.githubusercontent.com/19540357/169660812-5638e9ae-9e5b-4385-8ffd-66e0c718bb62.png)
 
-## My Main Reference to build this project this way
-- TheWisePad from Otavios Lemos book "Arquitetura Limpa Na Prática": https://github.com/otaviolemos/thewisepad-core
+## My main reference to build this project this way
+- ### TheWisePad from Otavios Lemos book "Arquitetura Limpa Na Prática": https://github.com/otaviolemos/thewisepad-core
 - ![tests-thewisepad](https://user-images.githubusercontent.com/19540357/169660799-bb09ec33-81d1-43fd-9b6c-3aade5ec6187.png)
+- ![test-1](https://user-images.githubusercontent.com/19540357/170873510-df039afb-6e46-42b9-83e5-adc0e01ceb9d.png)
+- ![insomnia-notes](https://user-images.githubusercontent.com/19540357/170873514-f4e6905e-a205-40a7-a119-88da054f914c.png)
+- ![mongoatlas-thewisepad-notes](https://user-images.githubusercontent.com/19540357/170873515-d7b6103e-1131-45b1-a5d8-664ba9ff6305.png)
 
