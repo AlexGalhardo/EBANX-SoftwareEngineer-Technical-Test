@@ -50,47 +50,47 @@
 
 ### Reset state before starting tests
 - POST /reset
-- HTTP_STATUS_CODE_OK OK
+- 200 OK
 - [x] Done
 
 ### Get balance for non-existing account
 - GET /balance?account_id=1234
-- HTTP_STATUS_CODE_NOT_FOUND 0
+- 404 0
 - [x] Done
 
 ### Create account with initial balance
 - POST /event {"type":"deposit", "destination":"100", "amount":10}
-- HTTP_STATUS_CODE_CREATED {"destination": {"id":"100", "balance":10}}
+- 201 {"destination": {"id":"100", "balance":10}}
 - [x] Done
 
 ### Deposit into existing account
 - POST /event {"type":"deposit", "destination":"100", "amount":10}
-- HTTP_STATUS_CODE_CREATED {"destination": {"id":"100", "balance":20}}
+- 201 {"destination": {"id":"100", "balance":20}}
 - [x] Done
 
 ### Get balance for existing account
 - GET /balance?account_id=100
-- HTTP_STATUS_CODE_OK 20
+- 200 20
 - [x] Done
 
 ### Withdraw from non-existing account
 - POST /event {"type":"withdraw", "origin":"HTTP_STATUS_CODE_OK", "amount":10}
-- HTTP_STATUS_CODE_NOT_FOUND 0
+- 404 0
 - [x] Done
 
 ### Withdraw from existing account
 - POST /event {"type":"withdraw", "origin":"100", "amount":5}
-- HTTP_STATUS_CODE_CREATED {"origin": {"id":"100", "balance":15}}
+- 201 {"origin": {"id":"100", "balance":15}}
 - [x] Done
 
 ### Transfer from existing account
 - POST /event {"type":"transfer", "origin":"100", "amount":15, "destination":"300"}
-- HTTP_STATUS_CODE_CREATED {"origin": {"id":"100", "balance":0}, "destination": {"id":"300", "balance":15}}
+- 201 {"origin": {"id":"100", "balance":0}, "destination": {"id":"300", "balance":15}}
 - [x] Done
 
 ### Transfer from non-existing account
 - POST /event {"type":"transfer", "origin":"HTTP_STATUS_CODE_OK", "amount":15, "destination":"300"}
-- HTTP_STATUS_CODE_NOT_FOUND 0
+- 404 0
 - [x] Done
 
 ### Publish it to internet
